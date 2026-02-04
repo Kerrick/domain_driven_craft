@@ -1,0 +1,25 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "DomainDriven Craft",
+    "description": "Dynamic difficulty based on who's online",
+    "uuid": "66a264ba-00af-4926-8686-ef4ecf543c7a",
+    "version": [0, 0, 1],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "9c2bfc79-51d0-4c0a-9ebb-9014100ba211",
+      "version": [0, 0, 1],
+      "entry": "lib/main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.17.0"
+    }
+  ]
+}
