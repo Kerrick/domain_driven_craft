@@ -18,6 +18,7 @@ export declare abstract class Setting<T> implements ReadonlySetting<T> {
   abstract set current(value: T);
   abstract get base(): T;
   abstract set base(value: T);
+  abstract parse(input: string): T | null;
   
   readonly hasOverride: boolean;
   readonly overrideRemaining: number | null;

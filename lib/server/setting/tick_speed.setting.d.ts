@@ -10,4 +10,5 @@ export declare class TickSpeedSetting extends Setting<number> {
   set current(value: number);
   get base(): number;
   set base(value: number);
+  parse(input: string): number | null;
 }
