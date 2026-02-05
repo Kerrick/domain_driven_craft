@@ -19,14 +19,14 @@ type Line = string | string[];
 
 export declare class Chat {
   static readonly instance: Chat;
-  static initialize(): Chat;
   
   hear(message: string): import("../command/types").Command | null;
   whisper(player: Player, ...lines: Line[]): void;
   speak(...lines: Line[]): void;
+  broadcastWarning(...lines: Line[]): void;
+  broadcastSuccess(...lines: Line[]): void;
   
   // Delegation to Polls
-  pollTimeout: number;
   propose<T extends Poll>(proposal: Proposal<T>): T;
   poll<T extends Poll>(PollClass: new (...args: any[]) => T): T | undefined;
   activePolls(): Poll[];
