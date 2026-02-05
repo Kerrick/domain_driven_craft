@@ -5,7 +5,10 @@
 import type { Command } from "./types";
 
 export declare class TimeoutCommand implements Command {
-  static readonly triggers: readonly string[];
+  constructor();
+  constructor(seconds: number);
+  
+  static from(message: string): TimeoutCommand | null;
   
   execute(player: import("../player").Player, server: import("../server").Server): void;
 }

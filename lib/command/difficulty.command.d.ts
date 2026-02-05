@@ -5,9 +5,10 @@
 import type { Command } from "./types";
 
 export declare class DifficultyCommand implements Command {
-  static readonly triggers: readonly string[];
+  constructor();
+  constructor(targetDifficulty: "peaceful" | "easy" | "normal" | "hard");
   
-  constructor(targetDifficulty: string);
+  static from(message: string): DifficultyCommand | null;
   
   execute(player: import("../player").Player, server: import("../server").Server): void;
 }

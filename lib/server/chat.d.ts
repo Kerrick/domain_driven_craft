@@ -4,21 +4,16 @@
 
 import type { Player } from "../player";
 
-export interface Message {
-  line(text: string): void;
-  
-  // Semantic formatting
-  success(text: string): string;
-  warning(text: string): string;
-  error(text: string): string;
-  muted(text: string): string;
-  highlight(text: string): string;
-  bold(text: string): string;
-  command(text: string): string;
-}
+export declare function muted(strings: TemplateStringsArray, ...values: unknown[]): string;
+export declare function highlight(strings: TemplateStringsArray, ...values: unknown[]): string;
+export declare function success(strings: TemplateStringsArray, ...values: unknown[]): string;
+export declare function warning(strings: TemplateStringsArray, ...values: unknown[]): string;
+export declare function error(strings: TemplateStringsArray, ...values: unknown[]): string;
+export declare function command(strings: TemplateStringsArray, ...values: unknown[]): string;
+export declare function bold(strings: TemplateStringsArray, ...values: unknown[]): string;
 
-export interface Chat {
+export declare class Chat {
   hear(message: string): import("../command/types").Command | null;
-  whisper(player: Player, compose: (msg: Message) => void): void;
-  speak(compose: (msg: Message) => void): void;
+  whisper(player: Player, ...lines: string[]): void;
+  speak(...lines: string[]): void;
 }
