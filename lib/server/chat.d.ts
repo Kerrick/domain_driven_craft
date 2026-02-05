@@ -24,6 +24,7 @@ export declare class Chat {
   whisper(player: Player, ...lines: Line[]): void;
   speak(...lines: Line[]): void;
   
+  // Delegation to Polls
   propose<T extends Poll>(proposal: Proposal<T>): T;
   poll<T extends Poll>(PollClass: new (...args: any[]) => T): T | undefined;
   activePolls(): Poll[];
