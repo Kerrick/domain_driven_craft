@@ -8,11 +8,13 @@ import type { Message } from "./chat";
 
 export declare class Server {
   readonly playerCount: number;
-  readonly difficulty: "peaceful" | "normal";
+  readonly difficulty: "peaceful" | "easy" | "normal" | "hard";
   tickSpeed: number;
+  pollTimeout: number;
   
   player(name: string): Player | undefined;
   allPlayers(): Player[];
+  activePolls(): Poll[];
   
   playerJoined(mcPlayer: import("@minecraft/server").Player): void;
   playerLeft(name: string): void;
@@ -22,6 +24,7 @@ export declare class Server {
   hear(message: string): import("../command/types").Command | null;
   
   recalculateDifficulty(): void;
+  checkPolls(): void;
   
   poll<T extends Poll>(PollClass: new (...args: any[]) => T): T | undefined;
   startPoll<T extends Poll>(PollClass: new (...args: any[]) => T, ...args: any[]): T;

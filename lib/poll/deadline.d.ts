@@ -2,14 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Player } from "../player";
-
-export interface Poll {
+export interface Deadline {
   readonly isExpired: boolean;
+  readonly remainingSeconds: number;
   readonly shouldWarn: boolean;
-  
-  vote(player: Player): void;
-  playerLeft(name: string): void;
   markWarned(): void;
-  announceExpiration(): void;
 }

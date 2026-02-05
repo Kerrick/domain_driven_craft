@@ -2,7 +2,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+export type Difficulty = "peaceful" | "easy" | "normal" | "hard";
+
 export interface Settings {
-  difficulty: "peaceful" | "normal";
+  difficulty: Difficulty;
   tickSpeed: number;
+  pollTimeout: number;
 }
