@@ -3,22 +3,21 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import type { Setting, ReadonlySetting } from "../types/setting";
+import type { Change } from "../types/change";
 import type { DifficultyName } from "../types/difficulty";
-import type { DifficultySetting } from "./setting/difficulty.setting";
-import type { TickSpeedSetting } from "./setting/tick_speed.setting";
-import type { FasttickDurationSetting } from "./setting/fasttick_duration.setting";
-import type { PollTimeoutSetting } from "./setting/poll_timeout.setting";
 
 export declare class Settings {
   static readonly instance: Settings;
   static initialize(): Settings;
   
-  readonly difficulty: DifficultySetting;
-  readonly tickSpeed: TickSpeedSetting;
-  readonly fasttickDuration: FasttickDurationSetting;
-  readonly pollTimeout: PollTimeoutSetting;
+  readonly difficulty: ReadonlySetting<DifficultyName>;
+  readonly tickSpeed: ReadonlySetting<number>;
+  readonly fasttickDuration: ReadonlySetting<number>;
+  readonly pollTimeout: ReadonlySetting<number>;
   
   tick(): void;
-  all(): Setting<unknown>[];
-  get(name: string): Setting<unknown> | undefined;
+  all(): ReadonlySetting<unknown>[];
+  get(name: string): ReadonlySetting<unknown> | undefined;
+  parse(name: string, input: string): unknown | null;
+  apply(name: string, change: Change): void;
 }
