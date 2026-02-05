@@ -4,6 +4,17 @@
 
 import type { Stat } from "./stat";
 
+interface MilestoneClass {
+  applies(stat: Stat): boolean;
+  isReached(stat: Stat): boolean;
+  new(stat: Stat): Milestone;
+}
+
 export declare class Milestone {
-  static check(stat: Stat): void;
+  constructor(stat: Stat);
+  
+  static applies(stat: Stat): boolean;
+  static isReached(stat: Stat): boolean;
+  
+  celebrate(): void;
 }

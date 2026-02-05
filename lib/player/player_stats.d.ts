@@ -11,6 +11,8 @@ export declare class PlayerStats {
   readonly blocksPlaced: Stat;
   readonly deaths: Stat;
   readonly mobKills: Stat;
+  readonly playTime: Stat;
+  readonly distanceWalked: Stat;
   
   all(): Stat[];
 }

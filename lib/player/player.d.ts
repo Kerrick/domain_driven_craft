@@ -15,8 +15,10 @@ export declare class Player {
   
   sendMessage(text: string): void;
   
+  // Domain actions
   brokeBlock(): void;
   placedBlock(): void;
   died(): void;
   killedMob(): void;
+  tick(): void;
 }
