@@ -3,8 +3,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import type { Player } from "../player";
-import type { Setting, ReadonlySetting } from "../types/setting";
-import type { DifficultyName } from "../types/difficulty";
 
 export declare class Server {
   static readonly instance: Server;
@@ -12,15 +10,6 @@ export declare class Server {
   
   readonly playerCount: number;
   readonly name: string;
-  
-  // Readonly projections
-  readonly difficulty: ReadonlySetting<DifficultyName>;
-  readonly tickSpeed: ReadonlySetting<number>;
-  readonly fasttickDuration: ReadonlySetting<number>;
-  
-  // Privileged access (for ops/internal)
-  setting(name: string): Setting<unknown> | undefined;
-  allSettings(): Setting<unknown>[];
   
   tick(): void;
   

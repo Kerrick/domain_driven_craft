@@ -10,6 +10,9 @@ import type { FasttickDurationSetting } from "./setting/fasttick_duration.settin
 import type { PollTimeoutSetting } from "./setting/poll_timeout.setting";
 
 export declare class Settings {
+  static readonly instance: Settings;
+  static initialize(): Settings;
+  
   readonly difficulty: DifficultySetting;
   readonly tickSpeed: TickSpeedSetting;
   readonly fasttickDuration: FasttickDurationSetting;
