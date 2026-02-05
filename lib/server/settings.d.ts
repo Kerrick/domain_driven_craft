@@ -11,8 +11,8 @@ export declare class Settings {
   readonly tickSpeed: number;
   readonly baseTickSpeed: number;
   
-  set difficulty(change: Change);
-  set tickSpeed(change: Change);
+  setDifficulty(change: Change): void;
+  setTickSpeed(change: Change): void;
   
   tick(): void;
   hasOverride(rule: "difficulty" | "tickSpeed"): boolean;

@@ -1,0 +1,12 @@
+{
+  "name": "domain_driven_craft",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc -p jsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@minecraft/server": "^1.17.0",
+    "typescript": "^5.3.0"
+  }
+}

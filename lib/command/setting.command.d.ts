@@ -3,5 +3,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import type { Command } from "./types";
+import type { Player } from "../player";
 
-export declare class SettingCommand implements Command {}
+export declare class SettingCommand implements Command {
+  execute(player: Player): void;
+}

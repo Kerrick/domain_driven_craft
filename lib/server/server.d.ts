@@ -17,8 +17,8 @@ export declare class Server {
   readonly tickSpeed: number;
   readonly baseTickSpeed: number;
   
-  set difficulty(change: Change);
-  set tickSpeed(change: Change);
+  setDifficulty(change: Change): void;
+  setTickSpeed(change: Change): void;
   
   tick(): void;
   
