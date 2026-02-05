@@ -4,11 +4,14 @@
 
 import type { Player } from "../player";
 import type { Chat } from "./chat";
+import type { Difficulty } from "../types/difficulty";
 
 export declare class Server {
-  readonly chat: Chat;
+  static readonly instance: Server;
+  static initialize(): Server;
+  
   readonly playerCount: number;
-  difficulty: "peaceful" | "easy" | "normal" | "hard";
+  difficulty: Difficulty;
   tickSpeed: number;
   pollTimeout: number;
   
@@ -18,8 +21,8 @@ export declare class Server {
   playerJoined(mcPlayer: import("@minecraft/server").Player): void;
   playerLeft(name: string): void;
   
-  whisper(player: Player, ...lines: string[]): void;
-  speak(...lines: string[]): void;
+  whisper(player: Player, ...lines: (string | string[])[]): void;
+  speak(...lines: (string | string[])[]): void;
   hear(message: string): import("../command/types").Command | null;
   
   recalculateDifficulty(): void;

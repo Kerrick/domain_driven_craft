@@ -2,9 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-export type Difficulty = "peaceful" | "easy" | "normal" | "hard";
+import type { Difficulty } from "../types/difficulty";
 
-export interface Settings {
+export declare class Settings {
   difficulty: Difficulty;
   tickSpeed: number;
   pollTimeout: number;
