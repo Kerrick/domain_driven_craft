@@ -12,22 +12,17 @@ export interface ReadonlySetting<T> {
   readonly overrideRemaining: number | null;
 }
 
-export declare class Setting<T> implements ReadonlySetting<T> {
-  constructor(
-    name: string,
-    getCurrent: () => T,
-    setCurrent: (value: T) => void,
-    getBase: () => T,
-    setBase: (value: T) => void,
-    announcer: () => void
-  );
+export declare abstract class Setting<T> implements ReadonlySetting<T> {
+  abstract get name(): string;
+  abstract get current(): T;
+  abstract set current(value: T);
+  abstract get base(): T;
+  abstract set base(value: T);
   
-  readonly name: string;
-  readonly current: T;
-  readonly base: T;
   readonly hasOverride: boolean;
   readonly overrideRemaining: number | null;
   
+  announceExpiry(): void;
   apply(change: Change): void;
   tick(): void;
   asReadonly(): ReadonlySetting<T>;
