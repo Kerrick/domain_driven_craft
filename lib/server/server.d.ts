@@ -15,9 +15,13 @@ export declare class Server {
   
   get difficulty(): DifficultyName;
   set difficulty(change: Change);
+  readonly baseDifficulty: DifficultyName;
   
   get tickSpeed(): number;
   set tickSpeed(change: Change);
+  readonly baseTickSpeed: number;
+  
+  fasttickDuration: number;
   
   tick(): void;
   

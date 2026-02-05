@@ -15,6 +15,8 @@ export declare class Settings {
   get tickSpeed(): number;
   set tickSpeed(change: Change);
   
+  fasttickDuration: number;
+  
   tick(): void;
   hasOverride(rule: "difficulty" | "tickSpeed"): boolean;
   overrideRemaining(rule: "difficulty" | "tickSpeed"): number | null;
