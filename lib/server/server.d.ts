@@ -11,6 +11,7 @@ export declare class Server {
   static initialize(): Server;
   
   readonly playerCount: number;
+  readonly name: string;
   readonly difficulty: DifficultyName;
   readonly baseDifficulty: DifficultyName;
   readonly tickSpeed: number;
