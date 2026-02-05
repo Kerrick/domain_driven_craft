@@ -20,5 +20,5 @@ export declare class Player {
   placedBlock(): void;
   died(): void;
   killedMob(): void;
-  tick(): void;
+  played(seconds: number): void;
 }
