@@ -4,10 +4,10 @@
 
 export type EffectType = "temporary" | "permanent";
 
-export interface Effect {
+export declare class Effect {
   readonly type: EffectType;
   readonly durationSeconds: number | null;
+  
+  static temporary(seconds: number): Effect;
+  static permanent(): Effect;
 }
-
-export declare function temporary(seconds: number): Effect;
-export declare function permanent(): Effect;

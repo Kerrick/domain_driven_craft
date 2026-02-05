@@ -4,7 +4,7 @@
 
 import type { Player } from "../player";
 
-export interface Vote {
-  readonly playerName: string;
-  readonly timestamp: number;
+export interface Poll {
+  vote(player: Player): void;
+  playerLeft(name: string): void;
 }

@@ -1,0 +1,9 @@
+// SPDX-FileCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import type { Command } from "./types";
+
+export declare class Commands {
+  for(message: string): Command | null;
+}
