@@ -10,6 +10,7 @@ export interface Poll {
   
   vote(player: Player): void;
   playerLeft(name: string): void;
+  conditionChanged(): void;
   markWarned(): void;
   announceExpiration(): void;
 }
