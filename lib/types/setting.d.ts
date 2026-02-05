@@ -4,7 +4,15 @@
 
 import type { Change } from "./change";
 
-export declare class Setting<T> {
+export interface ReadonlySetting<T> {
+  readonly name: string;
+  readonly current: T;
+  readonly base: T;
+  readonly hasOverride: boolean;
+  readonly overrideRemaining: number | null;
+}
+
+export declare class Setting<T> implements ReadonlySetting<T> {
   constructor(
     name: string,
     getCurrent: () => T,
@@ -22,4 +30,5 @@ export declare class Setting<T> {
   
   apply(change: Change): void;
   tick(): void;
+  asReadonly(): ReadonlySetting<T>;
 }
