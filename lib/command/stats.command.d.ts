@@ -4,4 +4,4 @@
 
 import type { Command, CommandClass } from "./types";
 
-export declare const MilestonesCommand: CommandClass<Command>;
+export declare const StatsCommand: CommandClass<Command>;

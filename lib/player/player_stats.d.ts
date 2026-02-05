@@ -2,15 +2,15 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { ReadonlyMilestone } from "../milestone/milestone";
+import type { Stat } from "../stat/stat";
 
 export declare class PlayerStats {
-  constructor(playerName: string);
+  constructor(player: import("./player").Player);
   
-  readonly blocksBroken: ReadonlyMilestone;
-  readonly blocksPlaced: ReadonlyMilestone;
-  readonly deaths: ReadonlyMilestone;
-  readonly mobKills: ReadonlyMilestone;
+  readonly blocksBroken: Stat;
+  readonly blocksPlaced: Stat;
+  readonly deaths: Stat;
+  readonly mobKills: Stat;
   
-  milestones(): ReadonlyMilestone[];
+  all(): Stat[];
 }
