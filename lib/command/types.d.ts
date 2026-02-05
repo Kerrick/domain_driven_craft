@@ -13,11 +13,11 @@ export interface Command {
   execute(player: Player): void;
 }
 
-export interface CommandClass {
-  new(...args: any[]): Command;
+export interface CommandClass<T extends Command = Command> {
+  new(...args: any[]): T;
   readonly trigger: string;
   readonly aliases?: readonly string[];
   readonly pattern?: RegExp;
   readonly help?: CommandHelp;
-  from(message: string): Command | null;
+  from(message: string): T | null;
 }

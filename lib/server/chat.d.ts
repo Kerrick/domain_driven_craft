@@ -12,6 +12,7 @@ export declare function success(strings: TemplateStringsArray, ...values: unknow
 export declare function warning(strings: TemplateStringsArray, ...values: unknown[]): string;
 export declare function error(strings: TemplateStringsArray, ...values: unknown[]): string;
 export declare function command(strings: TemplateStringsArray, ...values: unknown[]): string;
+export declare function arg(strings: TemplateStringsArray, ...values: unknown[]): string;
 export declare function bold(strings: TemplateStringsArray, ...values: unknown[]): string;
 
 type Line = string | string[];
