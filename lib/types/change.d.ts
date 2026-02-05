@@ -1,0 +1,12 @@
+// SPDX-FileCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+export declare class Change {
+  static permanent(value: number | string): Change;
+  static temporary(value: number | string, durationSeconds: number): Change;
+  
+  readonly value: number | string;
+  readonly expiresAt: number | null;
+  readonly isTemporary: boolean;
+}

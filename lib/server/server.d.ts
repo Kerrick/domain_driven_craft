@@ -4,15 +4,22 @@
 
 import type { Player } from "../player";
 import type { DifficultyName } from "../types/difficulty";
+import type { Change } from "../types/change";
 
 export declare class Server {
   static readonly instance: Server;
   static initialize(): Server;
   
   readonly playerCount: number;
-  difficulty: DifficultyName;
-  baseDifficulty: DifficultyName;
-  tickSpeed: number;
+  readonly difficulty: DifficultyName;
+  readonly baseDifficulty: DifficultyName;
+  readonly tickSpeed: number;
+  readonly baseTickSpeed: number;
+  
+  set difficulty(change: Change);
+  set tickSpeed(change: Change);
+  
+  tick(): void;
   
   player(name: string): Player | undefined;
   allPlayers(): Player[];
