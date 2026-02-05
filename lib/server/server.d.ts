@@ -3,8 +3,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import type { Player } from "../player";
+import type { Setting } from "../types/setting";
 import type { DifficultyName } from "../types/difficulty";
-import type { Change } from "../types/change";
 
 export declare class Server {
   static readonly instance: Server;
@@ -13,15 +13,12 @@ export declare class Server {
   readonly playerCount: number;
   readonly name: string;
   
-  get difficulty(): DifficultyName;
-  set difficulty(change: Change);
-  readonly baseDifficulty: DifficultyName;
+  readonly difficulty: Setting<DifficultyName>;
+  readonly tickSpeed: Setting<number>;
+  readonly fasttickDuration: Setting<number>;
   
-  get tickSpeed(): number;
-  set tickSpeed(change: Change);
-  readonly baseTickSpeed: number;
-  
-  fasttickDuration: number;
+  setting(name: string): Setting<unknown> | undefined;
+  allSettings(): Setting<unknown>[];
   
   tick(): void;
   

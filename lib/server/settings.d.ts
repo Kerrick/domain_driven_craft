@@ -2,22 +2,16 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+import type { Setting } from "../types/setting";
 import type { DifficultyName } from "../types/difficulty";
-import type { Change } from "../types/change";
 
 export declare class Settings {
-  readonly baseDifficulty: DifficultyName;
-  readonly baseTickSpeed: number;
-  
-  get difficulty(): DifficultyName;
-  set difficulty(change: Change);
-  
-  get tickSpeed(): number;
-  set tickSpeed(change: Change);
-  
-  fasttickDuration: number;
+  readonly difficulty: Setting<DifficultyName>;
+  readonly tickSpeed: Setting<number>;
+  readonly fasttickDuration: Setting<number>;
+  readonly pollTimeout: Setting<number>;
   
   tick(): void;
-  hasOverride(rule: "difficulty" | "tickSpeed"): boolean;
-  overrideRemaining(rule: "difficulty" | "tickSpeed"): number | null;
+  all(): Setting<unknown>[];
+  get(name: string): Setting<unknown> | undefined;
 }
