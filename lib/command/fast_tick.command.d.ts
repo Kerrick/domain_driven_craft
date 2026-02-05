@@ -6,7 +6,7 @@ import type { Command, CommandHelp } from "./types";
 import type { Player } from "../player";
 
 export declare class FastTickCommand implements Command {
-  static readonly triggers: readonly string[];
+  static readonly trigger: string;
   static readonly help: CommandHelp;
   static from(message: string): FastTickCommand | null;
   

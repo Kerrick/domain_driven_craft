@@ -15,7 +15,8 @@ export interface Command {
 
 export interface CommandClass {
   new(...args: any[]): Command;
-  readonly triggers?: readonly string[];
+  readonly trigger: string;
+  readonly aliases?: readonly string[];
   readonly pattern?: RegExp;
   readonly help?: CommandHelp;
   from(message: string): Command | null;

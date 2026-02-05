@@ -4,15 +4,16 @@
 
 import type { Command, CommandHelp } from "./types";
 import type { Player } from "../player";
-import type { Difficulty } from "../types/difficulty";
+import type { DifficultyName } from "../types/difficulty";
 
 export declare class DifficultyCommand implements Command {
+  static readonly trigger: string;
   static readonly pattern: RegExp;
   static readonly help: CommandHelp;
   static from(message: string): DifficultyCommand | null;
   
   constructor();
-  constructor(targetDifficulty: Difficulty);
+  constructor(targetDifficulty: DifficultyName);
   
   execute(player: Player): void;
 }

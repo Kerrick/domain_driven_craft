@@ -6,7 +6,8 @@ import type { Command, CommandHelp } from "./types";
 import type { Player } from "../player";
 
 export declare class HelpCommand implements Command {
-  static readonly triggers: readonly string[];
+  static readonly trigger: string;
+  static readonly aliases: readonly string[];
   static readonly help: CommandHelp;
   static from(message: string): HelpCommand | null;
   
