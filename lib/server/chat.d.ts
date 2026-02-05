@@ -25,7 +25,7 @@ export declare class Chat {
   speak(...lines: Line[]): void;
   broadcastWarning(...lines: Line[]): void;
   broadcastSuccess(...lines: Line[]): void;
-  
+  celebrate(tag: string, ...messageParts: string[]): void;
   // Delegation to Polls
   propose<T extends Poll>(proposal: Proposal<T>): T;
   poll<T extends Poll>(PollClass: new (...args: any[]) => T): T | undefined;
