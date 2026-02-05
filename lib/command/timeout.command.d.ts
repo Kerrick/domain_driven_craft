@@ -2,13 +2,16 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Command } from "./types";
+import type { Command, CommandHelp } from "./types";
+import type { Player } from "../player";
 
 export declare class TimeoutCommand implements Command {
+  static readonly pattern: RegExp;
+  static readonly help: CommandHelp;
+  static from(message: string): TimeoutCommand | null;
+  
   constructor();
   constructor(seconds: number);
   
-  static from(message: string): TimeoutCommand | null;
-  
-  execute(player: import("../player").Player, server: import("../server").Server): void;
+  execute(player: Player): void;
 }

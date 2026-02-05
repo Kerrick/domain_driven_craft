@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import type { Player } from "../player";
-import type { Poll } from "../poll/types";
+import type { Poll } from "../poll/poll";
 import type { Proposal } from "../poll/proposal";
 
 export declare function muted(strings: TemplateStringsArray, ...values: unknown[]): string;

@@ -4,6 +4,6 @@
 
 import type { Player } from "../player";
 
-export interface Welcome {
+export declare class Welcome {
   greet(player: Player): void;
 }

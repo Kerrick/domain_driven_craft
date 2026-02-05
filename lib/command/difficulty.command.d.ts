@@ -2,13 +2,17 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Command } from "./types";
+import type { Command, CommandHelp } from "./types";
+import type { Player } from "../player";
+import type { Difficulty } from "../types/difficulty";
 
 export declare class DifficultyCommand implements Command {
-  constructor();
-  constructor(targetDifficulty: "peaceful" | "easy" | "normal" | "hard");
-  
+  static readonly pattern: RegExp;
+  static readonly help: CommandHelp;
   static from(message: string): DifficultyCommand | null;
   
-  execute(player: import("../player").Player, server: import("../server").Server): void;
+  constructor();
+  constructor(targetDifficulty: Difficulty);
+  
+  execute(player: Player): void;
 }

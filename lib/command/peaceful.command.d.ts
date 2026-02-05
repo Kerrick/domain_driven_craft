@@ -2,8 +2,13 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import { Command } from "./types";
+import type { Command, CommandHelp } from "./types";
+import type { Player } from "../player";
 
 export declare class PeacefulCommand implements Command {
-  execute(player: import("../player").Player, server: import("../server").Server): void;
+  static readonly triggers: readonly string[];
+  static readonly help: CommandHelp;
+  static from(message: string): PeacefulCommand | null;
+  
+  execute(player: Player): void;
 }

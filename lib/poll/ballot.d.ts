@@ -4,7 +4,7 @@
 
 import type { Player } from "../player";
 
-export interface Ballot {
+export declare class Ballot {
   cast(player: Player): boolean;
   has(name: string): boolean;
   remove(name: string): void;
