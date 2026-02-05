@@ -13,7 +13,7 @@ export declare class Stat {
   readonly verb: string;
   readonly noun: string;
   readonly count: number;
+  readonly formatted: string;
   
   increment(amount?: number): number;
-  readonly formatted: string;
 }
