@@ -11,6 +11,7 @@ export declare class Server {
   
   readonly playerCount: number;
   difficulty: DifficultyName;
+  baseDifficulty: DifficultyName;
   tickSpeed: number;
   
   player(name: string): Player | undefined;

@@ -5,13 +5,14 @@
 import type { Command, CommandHelp } from "./types";
 import type { Player } from "../player";
 
-export declare class TimeoutCommand implements Command {
+export declare class SettingCommand implements Command {
   static readonly pattern: RegExp;
   static readonly help: CommandHelp;
-  static from(message: string): TimeoutCommand | null;
+  static from(message: string): SettingCommand | null;
   
   constructor();
-  constructor(seconds: number);
+  constructor(name: string);
+  constructor(name: string, value: string);
   
   execute(player: Player): void;
 }

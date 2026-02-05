@@ -6,5 +6,6 @@ import type { DifficultyName } from "../types/difficulty";
 
 export declare class Settings {
   difficulty: DifficultyName;
+  baseDifficulty: DifficultyName;
   tickSpeed: number;
 }
