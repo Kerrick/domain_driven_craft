@@ -5,11 +5,10 @@
 import type { Stat } from "./stat";
 
 export declare class Milestone {
-  constructor(stat: Stat);
+  constructor(stat: Stat, threshold: number);
   
   static applies(stat: Stat): boolean;
+  static check(stat: Stat): void;
   
-  thresholdReached(): number | null;
-  check(): void;
   celebrate(): void;
 }

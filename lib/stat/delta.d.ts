@@ -4,6 +4,7 @@
 
 import type { Stat } from "./stat";
 
-export declare class Milestones {
-  static check(stat: Stat): void;
+export declare class Delta {
+  constructor(stat: Stat);
+  check(): void;
 }
