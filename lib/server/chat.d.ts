@@ -14,12 +14,15 @@ export declare function error(strings: TemplateStringsArray, ...values: unknown[
 export declare function command(strings: TemplateStringsArray, ...values: unknown[]): string;
 export declare function bold(strings: TemplateStringsArray, ...values: unknown[]): string;
 
+type Line = string | string[];
+
 export declare class Chat {
-  constructor(server: import("./server").Server);
+  static readonly instance: Chat;
+  static initialize(): Chat;
   
   hear(message: string): import("../command/types").Command | null;
-  whisper(player: Player, ...lines: string[]): void;
-  speak(...lines: string[]): void;
+  whisper(player: Player, ...lines: Line[]): void;
+  speak(...lines: Line[]): void;
   
   propose<T extends Poll>(proposal: Proposal<T>): T;
   poll<T extends Poll>(PollClass: new (...args: any[]) => T): T | undefined;

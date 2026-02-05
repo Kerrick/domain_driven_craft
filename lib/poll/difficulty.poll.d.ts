@@ -3,15 +3,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import type { Poll } from "./types";
-import type { Server } from "../server";
 
 export declare class DifficultyPoll implements Poll {
+  constructor(targetDifficulty: "peaceful" | "easy" | "normal" | "hard", effectDurationSeconds: number);
+  
   readonly targetDifficulty: "peaceful" | "easy" | "normal" | "hard";
-  
-  constructor(server: Server, targetDifficulty: string, durationSeconds: number);
-  
-  vote(player: import("../player").Player): void;
-  playerLeft(name: string): void;
-  
-  conditionChanged(): void;
 }
