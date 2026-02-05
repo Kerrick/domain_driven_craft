@@ -6,7 +6,6 @@ import type { Player } from "../player";
 
 export declare class Server {
   static readonly instance: Server;
-  static initialize(): Server;
   
   readonly playerCount: number;
   readonly name: string;

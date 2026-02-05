@@ -8,7 +8,6 @@ import type { DifficultyName } from "../types/difficulty";
 
 export declare class Settings {
   static readonly instance: Settings;
-  static initialize(): Settings;
   
   readonly difficulty: ReadonlySetting<DifficultyName>;
   readonly tickSpeed: ReadonlySetting<number>;
