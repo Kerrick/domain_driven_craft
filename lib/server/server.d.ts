@@ -12,13 +12,12 @@ export declare class Server {
   
   readonly playerCount: number;
   readonly name: string;
-  readonly difficulty: DifficultyName;
-  readonly baseDifficulty: DifficultyName;
-  readonly tickSpeed: number;
-  readonly baseTickSpeed: number;
   
-  setDifficulty(change: Change): void;
-  setTickSpeed(change: Change): void;
+  get difficulty(): DifficultyName;
+  set difficulty(change: Change);
+  
+  get tickSpeed(): number;
+  set tickSpeed(change: Change);
   
   tick(): void;
   
