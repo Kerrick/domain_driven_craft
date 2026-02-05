@@ -2,10 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Difficulty } from "../types/difficulty";
+import type { DifficultyName } from "../types/difficulty";
 
 export declare class Settings {
-  difficulty: Difficulty;
+  difficulty: DifficultyName;
   tickSpeed: number;
-  pollTimeout: number;
 }

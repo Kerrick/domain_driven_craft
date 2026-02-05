@@ -25,6 +25,7 @@ export declare class Chat {
   speak(...lines: Line[]): void;
   
   // Delegation to Polls
+  pollTimeout: number;
   propose<T extends Poll>(proposal: Proposal<T>): T;
   poll<T extends Poll>(PollClass: new (...args: any[]) => T): T | undefined;
   activePolls(): Poll[];

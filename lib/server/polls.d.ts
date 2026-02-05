@@ -6,6 +6,8 @@ import type { Poll } from "../poll/poll";
 import type { Proposal } from "../poll/proposal";
 
 export declare class Polls {
+  timeout: number;
+  
   propose<T extends Poll>(proposal: Proposal<T>): T;
   get<T extends Poll>(PollClass: new (...args: any[]) => T): T | undefined;
   active(): Poll[];

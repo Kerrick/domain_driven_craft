@@ -3,17 +3,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import type { Player } from "../player";
-import type { Chat } from "./chat";
-import type { Difficulty } from "../types/difficulty";
+import type { DifficultyName } from "../types/difficulty";
 
 export declare class Server {
   static readonly instance: Server;
   static initialize(): Server;
   
   readonly playerCount: number;
-  difficulty: Difficulty;
+  difficulty: DifficultyName;
   tickSpeed: number;
-  pollTimeout: number;
   
   player(name: string): Player | undefined;
   allPlayers(): Player[];
