@@ -3,16 +3,21 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 import { BlockPermutation, Vector3 } from "@minecraft/server";
-import { Player } from "../player/player.js";
+import { Location } from "../types/location";
+import { Player } from "../player/player";
+import { AnnouncementStrategyConstructor } from "./strategy/announcement.strategy";
 
 export class Block {
-  constructor(permutation: BlockPermutation, location?: Vector3);
+  static AnnouncementStrategy: AnnouncementStrategyConstructor | null;
+  
+  constructor(location: Location);
   
   static register(BlockClass: typeof Block): void;
-  static fromPermutation(permutation: BlockPermutation, location?: Vector3): Block;
-  static matches(permutation: BlockPermutation): boolean;
+  // ACL boundary - takes MC types, translates, produces domain object
+  static fromPermutation(permutation: BlockPermutation, location: Vector3): Block;
+  protected static matches(permutation: BlockPermutation): boolean;
   
-  get isNotable(): boolean;
+  get location(): Location;
   get displayName(): string;
   
   announceTo(player: Player): void;

@@ -18,6 +18,8 @@ export declare class Player {
   
   // Domain actions
   brokeBlock(block: Block): void;
+  gazedAt(block: Block): void;
+  checkGaze(): void;
   placedBlock(): void;
   died(): void;
   killedMob(): void;
