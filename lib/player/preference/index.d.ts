@@ -5,3 +5,4 @@
 export { Preference } from "./preference";
 export { PeacefulPreference } from "./peaceful.preference";
 export { HomePreference } from "./home.preference";
+export { ReadonlyPreference } from "./readonly_preference";
