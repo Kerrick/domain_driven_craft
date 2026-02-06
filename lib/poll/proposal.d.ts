@@ -4,19 +4,15 @@
 
 import type { Player } from "../player";
 import type { Poll } from "./poll";
-import type { DifficultyPoll } from "./difficulty.poll";
 import type { TickSpeedPoll } from "./tick_speed.poll";
-import type { DifficultyName } from "../types/difficulty";
 
 type PollClass<T extends Poll = Poll> = new (...args: any[]) => T;
 
 // Poll-specific constructor args
-type DifficultyPollArgs = [targetDifficulty: DifficultyName, effectDurationSeconds: number];
 type TickSpeedPollArgs = [speed: number, effectDurationSeconds: number];
 
 // Type-safe args based on poll type
 type PollArgs<T extends Poll> = 
-  T extends DifficultyPoll ? DifficultyPollArgs :
   T extends TickSpeedPoll ? TickSpeedPollArgs :
   any[];
 
