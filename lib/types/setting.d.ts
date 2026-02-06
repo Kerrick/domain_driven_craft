@@ -25,6 +25,7 @@ export declare abstract class Setting<T> implements ReadonlySetting<T> {
   
   announceExpiry(): void;
   apply(change: Change): void;
+  force(value: T): void;
   tick(): void;
   asReadonly(): ReadonlySetting<T>;
 }
