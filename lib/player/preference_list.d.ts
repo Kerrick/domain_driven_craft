@@ -2,14 +2,15 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Preference } from "./preference/preference";
+import type { Location } from "../types/location";
+import type { ReadonlyPreference } from "./preference/readonly_preference";
 
 export declare class PreferenceList {
   constructor(playerName: string);
   
   readonly peaceful: boolean;
   togglePeaceful(): boolean;
-  setHome(x: number, y: number, z: number, dimension: string): void;
+  set home(location: Location);
   readonly homeFormatted: string;
-  all(): Preference[];
+  all(): ReadonlyPreference[];
 }

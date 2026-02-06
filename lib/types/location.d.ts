@@ -2,16 +2,17 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+import type { DimensionName } from "./dimension";
+
 export declare class Location {
-  constructor(x: number, y: number, z: number, dimension: string);
+  constructor(x: number, y: number, z: number, dimension: DimensionName);
   
   readonly x: number;
   readonly y: number;
   readonly z: number;
-  /** The world dimension: "minecraft:overworld", "minecraft:nether", or "minecraft:the_end" */
-  readonly dimension: string;
+  readonly dimension: DimensionName;
   readonly formatted: string;
   
-  toJSON(): { x: number; y: number; z: number; dimension: string };
+  toJSON(): { x: number; y: number; z: number; dimension: DimensionName };
   static fromJSON(json: string | object | null): Location | null;
 }
