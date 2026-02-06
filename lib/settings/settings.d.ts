@@ -19,4 +19,5 @@ export declare class Settings {
   get(name: string): ReadonlySetting<unknown> | undefined;
   parse(name: string, input: string): unknown | null;
   apply(name: string, change: Change): void;
+  force(name: string, value: unknown): void;
 }
