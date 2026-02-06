@@ -4,6 +4,7 @@
 
 import type { PlayerStats } from "./player_stats";
 import type { PreferenceList } from "./preference_list";
+import type { Block } from "../block/block";
 
 export declare class Player {
   constructor(mcPlayer: import("@minecraft/server").Player);
@@ -16,7 +17,7 @@ export declare class Player {
   sendMessage(text: string): void;
   
   // Domain actions
-  brokeBlock(): void;
+  brokeBlock(block: Block): void;
   placedBlock(): void;
   died(): void;
   killedMob(): void;

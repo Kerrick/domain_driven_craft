@@ -28,7 +28,7 @@ These were the heart of great servers in the 2010s era:
 | Feature | Description |
 |---------|-------------|
 | **`!roll`** | Random dice roll announced to server |
-| **`!coinflip`** | Heads/tails |
+| **`!flip`** | Heads/tails |
 | **Join/leave messages** | Styled messages with player count |
 
 ---
