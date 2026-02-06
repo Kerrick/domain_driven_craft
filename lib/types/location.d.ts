@@ -13,6 +13,7 @@ export declare class Location {
   readonly dimension: DimensionName;
   readonly formatted: string;
   
+  equals(other: Location | null): boolean;
   toJSON(): { x: number; y: number; z: number; dimension: DimensionName };
   static fromJSON(json: string | object | null): Location | null;
 }
