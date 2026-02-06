@@ -12,5 +12,7 @@ export declare class PreferenceList {
   togglePeaceful(): boolean;
   set home(location: Location);
   readonly homeFormatted: string;
+  readonly hasHome: boolean;
+  readonly homeLocation: Location | null;
   all(): ReadonlyPreference[];
 }
