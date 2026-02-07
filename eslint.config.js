@@ -7,10 +7,13 @@ import importPlugin from "eslint-plugin-import";
 // Domain nouns that end in agent-like suffixes
 // but are legitimate Minecraft/domain concepts
 const DOMAIN_NOUNS = [
-  "Player",        // Minecraft player entity
-  "Server",        // Minecraft server aggregate root
-  "Spawner",       // Minecraft mob spawner block
-  "PreferenceList", // collection of player preferences (not an -er agent)
+  "Player",               // Minecraft player entity
+  "Server",               // Minecraft server aggregate root
+  "Spawner",              // Minecraft mob spawner block
+  "PreferenceList",       // collection of player preferences (not an -er agent)
+  "Allowlist",            // Minecraft's standard term for the server allowlist
+  "InvitationGrant",      // nominalized verb — use case, not an agent (-ant)
+  "InvitationRevocation", // nominalized verb — use case, not an agent (-ant)
 ];
 
 export default [
