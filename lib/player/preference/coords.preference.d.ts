@@ -4,6 +4,6 @@
 
 import type { BooleanPreference } from "./boolean.preference";
 
-export declare class PeacefulPreference extends BooleanPreference {
+export declare class CoordsPreference extends BooleanPreference {
   constructor(playerName: string);
 }

@@ -4,6 +4,7 @@
 
 import type { PlayerStats } from "./player_stats";
 import type { PreferenceList } from "./preference_list";
+import type { Location } from "../types/location";
 import type { Block } from "../block/block";
 
 export declare class Player {
@@ -13,8 +14,15 @@ export declare class Player {
   readonly preferences: PreferenceList;
   readonly stats: PlayerStats;
   readonly isOp: boolean;
+  readonly location: Location;
   
   sendMessage(text: string): void;
+  set home(location: Location);
+  goHome(): Location;
+  
+  toggleCoords(): boolean;
+  showNotification(text: string, seconds: number): void;
+  updateActionBar(): void;
   
   // Domain actions
   brokeBlock(block: Block): void;

@@ -10,6 +10,8 @@ export declare class PreferenceList {
   
   readonly peaceful: boolean;
   togglePeaceful(): boolean;
+  readonly coords: boolean;
+  toggleCoords(): boolean;
   set home(location: Location);
   readonly homeFormatted: string;
   readonly hasHome: boolean;
