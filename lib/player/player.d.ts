@@ -14,6 +14,8 @@ export declare class Player {
   readonly preferences: PreferenceList;
   readonly stats: PlayerStats;
   readonly isOp: boolean;
+  readonly abstains: boolean;
+  readonly isAfk: boolean;
   readonly location: Location;
   
   sendMessage(text: string): void;
@@ -31,5 +33,6 @@ export declare class Player {
   placedBlock(): void;
   died(): void;
   killedMob(): void;
+  changedHotbarSlot(): void;
   played(seconds: number): void;
 }

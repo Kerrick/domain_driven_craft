@@ -4,6 +4,6 @@
 
 import type { Setting } from "../../types/setting";
 
-export declare class FasttickDurationSetting extends Setting<number> {
-  get name(): "fasttickDuration";
+export declare class AfkThresholdSetting extends Setting<number> {
+  get name(): "afkThreshold";
 }

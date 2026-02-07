@@ -12,13 +12,13 @@ export interface ReadonlySetting<T> {
   readonly overrideRemaining: number | null;
 }
 
-export declare abstract class Setting<T> implements ReadonlySetting<T> {
-  abstract get name(): string;
-  abstract get current(): T;
-  abstract set current(value: T);
-  abstract get base(): T;
-  abstract set base(value: T);
-  abstract parse(input: string): T | null;
+export declare class Setting<T> implements ReadonlySetting<T> {
+  get name(): string;
+  get current(): T;
+  set current(value: T);
+  get base(): T;
+  set base(value: T);
+  parse(input: string): T | null;
   
   readonly hasOverride: boolean;
   readonly overrideRemaining: number | null;

@@ -10,10 +10,14 @@ export declare class Location {
   readonly x: number;
   readonly y: number;
   readonly z: number;
+  readonly blockX: number;
+  readonly blockY: number;
+  readonly blockZ: number;
   readonly dimension: DimensionName;
   readonly formatted: string;
   
   equals(other: Location | null): boolean;
+  distanceFrom(other: Location): number;
   toJSON(): { x: number; y: number; z: number; dimension: DimensionName };
   static fromJSON(json: string | object | null): Location | null;
 }

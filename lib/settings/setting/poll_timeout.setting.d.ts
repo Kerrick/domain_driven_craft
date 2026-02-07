@@ -6,9 +6,4 @@ import type { Setting } from "../../types/setting";
 
 export declare class PollTimeoutSetting extends Setting<number> {
   get name(): "pollTimeout";
-  get current(): number;
-  set current(value: number);
-  get base(): number;
-  set base(value: number);
-  parse(input: string): number | null;
 }

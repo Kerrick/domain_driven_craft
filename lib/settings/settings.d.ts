@@ -13,6 +13,7 @@ export declare class Settings {
   readonly tickSpeed: ReadonlySetting<number>;
   readonly fasttickDuration: ReadonlySetting<number>;
   readonly pollTimeout: ReadonlySetting<number>;
+  readonly afkThreshold: ReadonlySetting<number>;
   
   tick(): void;
   all(): ReadonlySetting<unknown>[];

@@ -13,7 +13,8 @@ export declare class Server {
   tick(): void;
   
   player(name: string): Player | undefined;
-  allPlayers(): Player[];
+  allPlayers(): Set<Player>;
+  activePlayers(): Set<Player>;
   
   playerJoined(mcPlayer: import("@minecraft/server").Player): void;
   playerLeft(name: string): void;
