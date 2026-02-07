@@ -118,3 +118,9 @@ Read player inventory, chest contents.
 - Limited pathfinding control for mobs
 - No custom block/item textures (resource packs only)
 - Some events are BDS-only
+
+## Block Market
+
+Players can invest their diamonds, gold ingots, and emeralds into a "block market," a simulated stock market. Their investments only change when they're online. It roughly simulates a stochastic market with boom and bust cycles, erratic daily movements, and unpredictable price volatility--moderated by the fact that over a long time horizon, it goes generally up. Much like the real stock market, it's a place to speculate, but also a place to save money for the future. IRL the annual real return on investment is about 7%, so the block market should be about the same... but what's the game-fun equivalent of an IRL year in terms of hours played? Probably about 100 hours.
+
+If we want it to be per-player for movement, every player's block market movements must be independent of each other. Downside: no social interaction to market movements like crashes and run-ups and boom/bust cycles. Upside: simple to develop. To overcome this, ...?

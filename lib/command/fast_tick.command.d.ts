@@ -2,9 +2,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Command } from "./types";
-import type { Player } from "../player";
+import type { Command, CommandClass } from "./types";
 
-export declare class FastTickCommand implements Command {
-  execute(player: Player): void;
-}
+export declare const FastTickCommand: CommandClass<Command>;
