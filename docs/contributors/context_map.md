@@ -42,6 +42,17 @@ personality.
 | Poll | A timed vote that requires player consensus |
 | Setting | A server-wide configuration that ops can change |
 
+**Subdomains:**
+
+| Subdomain | Scope | Status |
+|-----------|-------|--------|
+| Gameplay | Coords, Stats, Milestones, Sightings, Preferences, Home | Active |
+| Governance | Polls, Settings, Ops, Commands | Active |
+| IAM | Gamertag, Invitation, Online | Active |
+| Notifications | Announcement, Celebration, Whisper, Broadcast, Notification — and the emerging event bus that ActionBar, Chat, and external analytics can subscribe to | Emerging |
+| Economy | Block Market — simulated investments with stochastic returns | Future |
+| Territory | Land Claims, Surface Rights, Mineral Rights | Future |
+
 ---
 
 ### Minecraft Platform

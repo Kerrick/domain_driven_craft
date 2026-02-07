@@ -124,3 +124,9 @@ Read player inventory, chest contents.
 Players can invest their diamonds, gold ingots, and emeralds into a "block market," a simulated stock market. Their investments only change when they're online. It roughly simulates a stochastic market with boom and bust cycles, erratic daily movements, and unpredictable price volatility--moderated by the fact that over a long time horizon, it goes generally up. Much like the real stock market, it's a place to speculate, but also a place to save money for the future. IRL the annual real return on investment is about 7%, so the block market should be about the same... but what's the game-fun equivalent of an IRL year in terms of hours played? Probably about 100 hours.
 
 If we want it to be per-player for movement, every player's block market movements must be independent of each other. Downside: no social interaction to market movements like crashes and run-ups and boom/bust cycles. Upside: simple to develop. To overcome this, ...?
+
+## Land Claims
+
+Players can build a completely enclosed fence (fences & gates only) under open sky (each fence block and encclosed block) to claim surface rights for a plot of land. Their surface rights extend from the top of the world to N blocks (maybe 3-10) below the fence (what about fences on hills?). You are in complete control of your land, and no one can build on it, break blocks on t, or remove items from chests etc. on it without your permission, which you can revoke at any time. 
+
+Perhaps we even also come up with a way to claim mineral rights, but I don't know how players would do that.
