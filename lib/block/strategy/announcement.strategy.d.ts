@@ -6,7 +6,8 @@ import { Block } from "../block";
 import { Player } from "../../player/player";
 
 export interface AnnouncementStrategy {
-  announce(player: Player): void;
+  onBrokenBy(player: Player): void;
+  onGazedAtBy(player: Player): void;
 }
 
 export interface AnnouncementStrategyConstructor {

@@ -20,5 +20,6 @@ export class Block {
   get location(): Location;
   get displayName(): string;
   
-  announceTo(player: Player): void;
+  brokenBy(player: Player): void;
+  gazedAtBy(player: Player): void;
 }
