@@ -2,10 +2,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Gamertag } from "../types/gamertag";
-import type { AllowlistRepository } from "./allowlist_repository";
+import type { InvitationChange } from './invitation_change'
 
-export declare class InvitationGrant {
-  constructor(repository: AllowlistRepository);
-  for(gamertag: Gamertag): Gamertag;
-}
+/**
+ * Granting an invitation requires loading the current allowlist, adding the
+ * guest, persisting the change, and syncing with the Minecraft API. This use
+ * case encapsulates that workflow.
+ */
+export declare class InvitationGrant extends InvitationChange {}

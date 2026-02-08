@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { AllowlistErrorClass } from "./allowlist_error";
+import type { AllowlistErrorClass } from './allowlist_error'
 
-export declare const ResidentProtected: AllowlistErrorClass;
+/** Thrown when an operator attempts to uninvite a resident (seed player). */
+export declare const ResidentProtected: AllowlistErrorClass

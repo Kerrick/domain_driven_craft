@@ -2,6 +2,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Command, CommandClass } from "./types";
+import type { Command, CommandClass } from './types'
 
-export declare const GoHomeCommand: CommandClass<Command>;
+/**
+ * Players explore far from their base and want a way back. This command
+ * teleports the player to their saved home location.
+ */
+export declare const GoHomeCommand: CommandClass<Command>

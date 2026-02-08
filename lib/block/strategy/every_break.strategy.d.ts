@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { AnnouncementStrategyConstructor } from "./announcement.strategy";
+import type { AnnouncementStrategyConstructor } from './announcement.strategy'
 
-export declare const EveryBreak: AnnouncementStrategyConstructor;
+/** Announces every time a player breaks the block. */
+export declare const EveryBreak: AnnouncementStrategyConstructor

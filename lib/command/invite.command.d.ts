@@ -2,15 +2,18 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Command, CommandHelp } from "./types";
-import type { InvitationGrant } from "../server/invitation_grant";
+import type { Command, CommandClass } from './types'
+import type { InvitationGrant } from '../server/invitation_grant'
 
-export declare class InviteCommand implements Command {
-  static readonly trigger: string;
-  static readonly pattern: RegExp;
-  static readonly help: CommandHelp;
-  static useCase: InvitationGrant;
-
-  static from(message: string): InviteCommand | null;
-  execute(player: import("../player/player").Player): void;
+/**
+ * The server distinguishes between residents and guests. Operators sometimes
+ * need to add a guest from within the game. This command grants a new player
+ * access to the allowlist.
+ */
+export declare const InviteCommand: CommandClass<Command> & {
+  /**
+   * Injected use case that performs the allowlist grant, wired at the
+   * composition root.
+   */
+  useCase: InvitationGrant
 }

@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { AllowlistErrorClass } from "./allowlist_error";
+import type { AllowlistErrorClass } from './allowlist_error'
 
-export declare const AlreadyInvited: AllowlistErrorClass;
+/** Thrown when an operator invites a gamertag that is already on the allowlist. */
+export declare const AlreadyInvited: AllowlistErrorClass

@@ -2,10 +2,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Gamertag } from "../types/gamertag";
-import type { AllowlistRepository } from "./allowlist_repository";
+import type { InvitationChange } from './invitation_change'
 
-export declare class InvitationRevocation {
-  constructor(repository: AllowlistRepository);
-  for(gamertag: Gamertag): Gamertag;
-}
+/**
+ * Revoking an invitation requires loading the current allowlist, removing the
+ * guest (while protecting residents), persisting the change, and syncing with
+ * the Minecraft API. This use case encapsulates that workflow.
+ */
+export declare class InvitationRevocation extends InvitationChange {}

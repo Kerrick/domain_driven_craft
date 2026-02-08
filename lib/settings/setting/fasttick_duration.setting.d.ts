@@ -2,8 +2,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Setting } from "../../types/setting";
+import type { Setting } from '../../types/setting'
 
+/** Duration in seconds for fast-tick poll effects. */
 export declare class FasttickDurationSetting extends Setting<number> {
-  get name(): "fasttickDuration";
+  /** @inheritdoc */
+  get name(): 'fasttickDuration'
 }

@@ -2,6 +2,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Command, CommandClass } from "./types";
+import type { Command, CommandClass } from './types'
 
-export declare const StatsCommand: CommandClass<Command>;
+/**
+ * The server tracks per-player statistics like blocks broken and distance
+ * walked. Players want to see their progress (or another player's). This
+ * command whispers a stat summary.
+ */
+export declare const StatsCommand: CommandClass<Command>

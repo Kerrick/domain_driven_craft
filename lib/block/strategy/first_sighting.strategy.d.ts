@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { AnnouncementStrategyConstructor } from "./announcement.strategy";
+import type { AnnouncementStrategyConstructor } from './announcement.strategy'
 
-export declare const FirstSighting: AnnouncementStrategyConstructor;
+/** Announces only the first time any player visually discovers the block. */
+export declare const FirstSighting: AnnouncementStrategyConstructor

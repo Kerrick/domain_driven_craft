@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import { Block } from "./block.js";
+import { Block } from './block.js'
 
+/** Mob spawners are non-renewable and merit a first-sighting announcement. */
 export class Spawner extends Block {}

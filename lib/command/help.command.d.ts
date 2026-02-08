@@ -2,6 +2,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Command, CommandClass } from "./types";
+import type { Command, CommandClass } from './types'
 
-export declare const HelpCommand: CommandClass<Command>;
+/**
+ * Players discover available commands through a help listing. This command
+ * whispers all registered commands with their usage and description.
+ */
+export declare const HelpCommand: CommandClass<Command>

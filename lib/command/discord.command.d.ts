@@ -2,6 +2,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Command, CommandClass } from "./types";
+import type { Command, CommandClass } from './types'
 
-export declare const DiscordCommand: CommandClass<Command>;
+/**
+ * The server community communicates outside the game on Discord. Players need
+ * the invite link without leaving the game. This command shares it.
+ */
+export declare const DiscordCommand: CommandClass<Command>

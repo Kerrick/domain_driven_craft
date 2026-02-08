@@ -2,6 +2,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Command, CommandClass } from "./types";
+import type { Command, CommandClass } from './types'
 
-export declare const SetHomeCommand: CommandClass<Command>;
+/**
+ * Players need to mark a location before they can teleport back to it. This
+ * command saves the player's current position as home.
+ */
+export declare const SetHomeCommand: CommandClass<Command>

@@ -2,12 +2,15 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Gamertag } from "../../../types/gamertag";
+import type { Gamertag } from '../../../types/gamertag'
 
+/** Domain error thrown when an allowlist operation violates a business rule. */
 export interface AllowlistError extends Error {
-  readonly gamertag: Gamertag;
+  /** The gamertag the operation targeted. */
+  readonly gamertag: Gamertag
 }
 
+/** Constructor signature for {@link AllowlistError} implementations. */
 export interface AllowlistErrorClass {
-  new(gamertag: Gamertag): AllowlistError;
+  new (gamertag: Gamertag): AllowlistError
 }

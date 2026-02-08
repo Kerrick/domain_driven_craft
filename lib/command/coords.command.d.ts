@@ -2,6 +2,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Command, CommandClass } from "./types";
+import type { Command, CommandClass } from './types'
 
-export declare const CoordsCommand: CommandClass<Command>;
+/**
+ * The action bar does not show coordinates by default. Players who want
+ * positional awareness can toggle them on. This command switches the coordinate
+ * display for the issuing player.
+ */
+export declare const CoordsCommand: CommandClass<Command>

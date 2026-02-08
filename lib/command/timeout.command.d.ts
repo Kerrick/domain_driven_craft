@@ -2,6 +2,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import type { Command, CommandClass } from "./types";
+import type { Command, CommandClass } from './types'
 
-export declare const TimeoutCommand: CommandClass<Command>;
+/**
+ * Polls have a voting window. The default duration may not suit every server.
+ * This command adjusts the poll timeout.
+ */
+export declare const TimeoutCommand: CommandClass<Command>

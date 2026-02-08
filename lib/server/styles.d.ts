@@ -2,13 +2,24 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-type TaggedTemplateFn = (strings: TemplateStringsArray, ...values: unknown[]) => string;
+type TaggedTemplateFn = (
+  strings: TemplateStringsArray,
+  ...values: unknown[]
+) => string
 
-export declare const muted: TaggedTemplateFn;
-export declare const highlight: TaggedTemplateFn;
-export declare const success: TaggedTemplateFn;
-export declare const warning: TaggedTemplateFn;
-export declare const error: TaggedTemplateFn;
-export declare const command: TaggedTemplateFn;
-export declare const arg: TaggedTemplateFn;
-export declare const bold: TaggedTemplateFn;
+/** Gray text for secondary information. */
+export declare const muted: TaggedTemplateFn
+/** Bright text for emphasis. */
+export declare const highlight: TaggedTemplateFn
+/** Green text for positive outcomes. */
+export declare const success: TaggedTemplateFn
+/** Yellow text for cautions. */
+export declare const warning: TaggedTemplateFn
+/** Red text for failures. */
+export declare const error: TaggedTemplateFn
+/** Styled command name (e.g. `!help`). */
+export declare const command: TaggedTemplateFn
+/** Styled argument value. */
+export declare const arg: TaggedTemplateFn
+/** Bold text. */
+export declare const bold: TaggedTemplateFn

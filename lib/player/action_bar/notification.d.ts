@@ -2,9 +2,15 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+/**
+ * A temporary message shown on the action bar for a fixed duration. Expires
+ * after its allotted seconds.
+ */
 export declare class Notification {
-  constructor(text: string, seconds: number);
-  
-  readonly text: string;
-  readonly expired: boolean;
+  constructor(text: string, seconds: number)
+
+  /** The message to display. */
+  readonly text: string
+  /** Whether this notification's display time has elapsed. */
+  readonly expired: boolean
 }
