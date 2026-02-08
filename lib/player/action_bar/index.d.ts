@@ -4,6 +4,6 @@
 
 export { ActionBar } from "./action_bar";
 export { Coords } from "./coords";
-export { HudItemText } from "./hud_item_text";
+
 export { Notification } from "./notification";
 export { Notifications } from "./notifications";
