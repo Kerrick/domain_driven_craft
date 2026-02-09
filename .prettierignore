@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+node_modules/
+package-lock.json
+LICENSES/
+lib/**/*.js
+scripts/**/*.js
+eslint.config.js
+.config/eslint.minecraft.js
+.config/eslint.node.js
+.config/eslint-plugin-rubyish.js
+.config/eslint_exceptions.js
+.config/typescript_exceptions.js
+.config/vitest.config.js
+test/

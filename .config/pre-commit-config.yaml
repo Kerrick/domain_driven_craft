@@ -3,8 +3,8 @@
 repos:
   - repo: local
     hooks:
-      - id: reuse
-        name: reuse lint
-        entry: reuse lint
+      - id: check
+        name: lint + typecheck
+        entry: npm run precommit
         language: system
         pass_filenames: false

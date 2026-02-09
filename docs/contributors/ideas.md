@@ -12,24 +12,24 @@ A collection of feature ideas for extending the server utilities behavior pack.
 
 These were the heart of great servers in the 2010s era:
 
-| Feature | Description | Notes |
-|---------|-------------|-------|
-| **`!home` / `!sethome`** | Personal teleport points | Store in dynamic properties per-player |
-| **`!spawn`** | Return to world spawn | Simple, useful for new players |
-| **`!warp <name>`** | Admin-set warps | Named locations like "shop", "arena" |
-| **`!tpa <player>`** | Teleport request | Could integrate with Poll system |
-| **`!msg <player>`** | Private messaging | |
-| **`!afk`** | Toggle AFK status | Auto-AFK after idle possible |
-| **`!back`** | Return to last death location | Store on `entityDie` event |
-| **`!playtime`** | Track and show play time | Increment via runInterval |
+| Feature                  | Description                   | Notes                                  |
+| ------------------------ | ----------------------------- | -------------------------------------- |
+| **`!home` / `!sethome`** | Personal teleport points      | Store in dynamic properties per-player |
+| **`!spawn`**             | Return to world spawn         | Simple, useful for new players         |
+| **`!warp <name>`**       | Admin-set warps               | Named locations like "shop", "arena"   |
+| **`!tpa <player>`**      | Teleport request              | Could integrate with Poll system       |
+| **`!msg <player>`**      | Private messaging             |                                        |
+| **`!afk`**               | Toggle AFK status             | Auto-AFK after idle possible           |
+| **`!back`**              | Return to last death location | Store on `entityDie` event             |
+| **`!playtime`**          | Track and show play time      | Increment via runInterval              |
 
 ## Fun/Engagement
 
-| Feature | Description |
-|---------|-------------|
-| **`!roll`** | Random dice roll announced to server |
-| **`!flip`** | Heads/tails |
-| **Join/leave messages** | Styled messages with player count |
+| Feature                 | Description                          |
+| ----------------------- | ------------------------------------ |
+| **`!roll`**             | Random dice roll announced to server |
+| **`!flip`**             | Heads/tails                          |
+| **Join/leave messages** | Styled messages with player count    |
 
 ---
 
@@ -37,17 +37,18 @@ These were the heart of great servers in the 2010s era:
 
 ## Core Modules
 
-| Module | Purpose |
-|--------|---------|
-| `@minecraft/server` | World, players, entities, blocks, events, game rules |
-| `@minecraft/server-ui` | Modal forms, action bars, message boxes |
-| `@minecraft/server-admin` | Server configuration (BDS-only) |
-| `@minecraft/server-net` | HTTP requests (BDS-only, experimental) |
-| `@minecraft/server-gametest` | Testing framework, structure spawning |
+| Module                       | Purpose                                              |
+| ---------------------------- | ---------------------------------------------------- |
+| `@minecraft/server`          | World, players, entities, blocks, events, game rules |
+| `@minecraft/server-ui`       | Modal forms, action bars, message boxes              |
+| `@minecraft/server-admin`    | Server configuration (BDS-only)                      |
+| `@minecraft/server-net`      | HTTP requests (BDS-only, experimental)               |
+| `@minecraft/server-gametest` | Testing framework, structure spawning                |
 
 ## Event System
 
 ### Before Events (cancellable)
+
 - `chatSend` — intercept and modify/cancel chat
 - `playerBreakBlock`, `playerPlaceBlock` — block protection
 - `itemUse`, `itemUseOn` — detect item right-clicks
@@ -55,6 +56,7 @@ These were the heart of great servers in the 2010s era:
 - `playerInteractWithEntity`, `playerInteractWithBlock`
 
 ### After Events (observe only)
+
 - `playerSpawn`, `playerLeave`
 - `entityDie`, `entityHurt`, `entityLoad`
 - `worldInitialize`
@@ -65,51 +67,61 @@ These were the heart of great servers in the 2010s era:
 ## Unique Capabilities
 
 ### Dynamic Properties
+
 Arbitrary per-world or per-entity key-value storage. Already using this for settings and preferences.
 
 ### Custom Components
+
 Attach data/behavior to blocks or items by type.
 
 ### Scoreboard API
+
 Programmatic scoreboard manipulation for on-screen HUD and data tracking.
 
 ### Structure API
+
 Save/load builds as NBT, paste at locations. Great for arenas, templates.
 
 ### Entity Queries
+
 Find entities by type, location, tags, family, etc.
 
 ### Raycasting
+
 - `player.getBlockFromViewDirection()`
 - `player.getEntitiesFromViewDirection()`
 
 ### Modal Forms (`@minecraft/server-ui`)
+
 - `ModalFormData` — text inputs, dropdowns, sliders, toggles
 - `ActionFormData` — button menu
 - `MessageFormData` — yes/no dialogs
 
 ### Particle/Sound
+
 Spawn visual/audio effects at locations.
 
 ### Container/Inventory
+
 Read player inventory, chest contents.
 
 ### Command Execution
+
 `dimension.runCommand()`, `player.runCommand()` for anything not in JS API.
 
 ## Use Cases That Shine
 
-| Use Case | Why Script API? |
-|----------|-----------------|
-| **Voting systems** | Custom logic, persistence, UI |
-| **Custom shops with UI** | Modal forms + inventory inspection |
-| **Land claims** | Block break/place events + spatial queries |
-| **Death tracking** | `entityDie` event, store last position |
-| **Custom mobs/bosses** | Entity spawning + health manipulation |
-| **Minigames** | Structure API, scoreboard, entity queries |
-| **Build protection** | Cancel block placement in regions |
-| **Interactive NPCs** | Spawn entities, detect interaction, show forms |
-| **Portals/teleporters** | Pressure plate events + teleportation |
+| Use Case                 | Why Script API?                                |
+| ------------------------ | ---------------------------------------------- |
+| **Voting systems**       | Custom logic, persistence, UI                  |
+| **Custom shops with UI** | Modal forms + inventory inspection             |
+| **Land claims**          | Block break/place events + spatial queries     |
+| **Death tracking**       | `entityDie` event, store last position         |
+| **Custom mobs/bosses**   | Entity spawning + health manipulation          |
+| **Minigames**            | Structure API, scoreboard, entity queries      |
+| **Build protection**     | Cancel block placement in regions              |
+| **Interactive NPCs**     | Spawn entities, detect interaction, show forms |
+| **Portals/teleporters**  | Pressure plate events + teleportation          |
 
 ## Current Limitations
 
@@ -135,7 +147,7 @@ Each hour a player is online, they automatically **"buy in"** 1 copper at whatev
 - **No incentive to dodge crashes.** A player who skips a crash also skips buying cheap. When the market recovers, the player who played through the crash holds units bought at low prices, which are now very valuable. Consistent players always win long-term — just like real DCA.
 - **Crashes feel exciting, not punishing.** Experienced players will recognize a crash as a buying opportunity: _"I should play today, everything's on sale."_
 
-Participation in the automatic buy-in is opt-in, set by a preference command. 
+Participation in the automatic buy-in is opt-in, set by a preference command.
 
 ### Volatility
 
@@ -185,18 +197,18 @@ Per-player: a map of perimeter-block positions they've placed (coordinate → bl
 
 ### Allow List
 
-| Category | Blocks | Cost | Aesthetics |
-|----------|--------|------|------------|
-| **Wood Fences** | Oak, Spruce, Birch, Jungle, Acacia, Dark Oak, Mangrove, Cherry, Bamboo | 6 planks + 2 sticks per 3 | Classic, rural ✓ |
-| **Nether Fences** | Crimson, Warped, Nether Brick | Nether access + sticks or bricks | Colorful, dramatic ✓ |
-| **Fence Gates** | All 11 wood types + Crimson, Warped | 4 planks + 2 sticks | Match their fence ✓ |
-| **Stone Walls** | Cobblestone, Mossy Cobblestone | Abundant cobble | Medieval, solid ✓✓ |
-| **Polished Walls** | Stone Brick, Mossy Stone Brick, Granite, Diorite, Andesite | Smelting + crafting | Clean, refined ✓✓ |
-| **Sandstone Walls** | Sandstone, Red Sandstone | Desert sand | Desert-appropriate ✓ |
-| **Brick Walls** | Brick, Mud Brick | Clay (rare!) / mud + wheat | Warm, rustic ✓✓ |
-| **Deepslate Walls** | Cobbled, Polished, Brick, Tile | Deep mining | Dark, modern ✓✓✓ |
-| **Nether Walls** | Nether Brick, Red Nether Brick, Blackstone, Polished Blackstone (+ brick) | Nether access | Imposing ✓✓ |
-| **Other Walls** | End Stone Brick, Prismarine, Tuff, Polished Tuff, Tuff Brick | Various rare sources | Unique, biome-tied ✓✓ |
+| Category            | Blocks                                                                    | Cost                             | Aesthetics            |
+| ------------------- | ------------------------------------------------------------------------- | -------------------------------- | --------------------- |
+| **Wood Fences**     | Oak, Spruce, Birch, Jungle, Acacia, Dark Oak, Mangrove, Cherry, Bamboo    | 6 planks + 2 sticks per 3        | Classic, rural ✓      |
+| **Nether Fences**   | Crimson, Warped, Nether Brick                                             | Nether access + sticks or bricks | Colorful, dramatic ✓  |
+| **Fence Gates**     | All 11 wood types + Crimson, Warped                                       | 4 planks + 2 sticks              | Match their fence ✓   |
+| **Stone Walls**     | Cobblestone, Mossy Cobblestone                                            | Abundant cobble                  | Medieval, solid ✓✓    |
+| **Polished Walls**  | Stone Brick, Mossy Stone Brick, Granite, Diorite, Andesite                | Smelting + crafting              | Clean, refined ✓✓     |
+| **Sandstone Walls** | Sandstone, Red Sandstone                                                  | Desert sand                      | Desert-appropriate ✓  |
+| **Brick Walls**     | Brick, Mud Brick                                                          | Clay (rare!) / mud + wheat       | Warm, rustic ✓✓       |
+| **Deepslate Walls** | Cobbled, Polished, Brick, Tile                                            | Deep mining                      | Dark, modern ✓✓✓      |
+| **Nether Walls**    | Nether Brick, Red Nether Brick, Blackstone, Polished Blackstone (+ brick) | Nether access                    | Imposing ✓✓           |
+| **Other Walls**     | End Stone Brick, Prismarine, Tuff, Polished Tuff, Tuff Brick              | Various rare sources             | Unique, biome-tied ✓✓ |
 
 In code, detection can use substring matching: `id.includes('fence') || id.includes('wall') || id.includes('gate')`.
 
@@ -244,16 +256,16 @@ Players can spend **copper** to buy resources they haven't traveled to gather th
 
 Shop inventory unlocks progressively based on play time, so new players can't shortcut the natural mining progression:
 
-| Unlocks At | You Get | Copper Cost (ingots) |
-|------------|---------|----------------------|
-| 0 hours | 64 common blocks (other wood types, sand, terracotta) | 8 |
-| 0 hours | 64 processed blocks (stone bricks, polished granite) | 24 |
-| 10 hours | 64 cross-biome blocks (cherry planks, mangrove wood, bamboo) | 16 |
-| 20 hours | 64 cross-dimension blocks (nether bricks, soul sand, end stone) | 32 |
-| 50 hours | 1 gold ingot | 4 |
-| 50 hours | 1 emerald | 24 |
-| 50 hours | 1 diamond | 32 |
-| 50 hours | 1 rare drop (shulker shell, wither skeleton skull) | 128 |
+| Unlocks At | You Get                                                         | Copper Cost (ingots) |
+| ---------- | --------------------------------------------------------------- | -------------------- |
+| 0 hours    | 64 common blocks (other wood types, sand, terracotta)           | 8                    |
+| 0 hours    | 64 processed blocks (stone bricks, polished granite)            | 24                   |
+| 10 hours   | 64 cross-biome blocks (cherry planks, mangrove wood, bamboo)    | 16                   |
+| 20 hours   | 64 cross-dimension blocks (nether bricks, soul sand, end stone) | 32                   |
+| 50 hours   | 1 gold ingot                                                    | 4                    |
+| 50 hours   | 1 emerald                                                       | 24                   |
+| 50 hours   | 1 diamond                                                       | 32                   |
+| 50 hours   | 1 rare drop (shulker shell, wither skeleton skull)              | 128                  |
 
 By the time precious items unlock, the player has found them naturally through mining. The shop becomes a convenience for established players, not a shortcut for new ones.
 
@@ -263,11 +275,11 @@ The shop serves as a copper sink that fights inflation — even when players hav
 
 Copper ties all four systems together:
 
-| Copper Sink | What You Get |
-|-------------|-------------|
-| Block Market | Long-term savings via DCA |
-| Mineral Rights | Ore detection in your claimed shafts |
-| Shops | Resources from biomes you haven't reached |
-| Land Claims | _(Free — earned by building, not bought)_ |
+| Copper Sink    | What You Get                              |
+| -------------- | ----------------------------------------- |
+| Block Market   | Long-term savings via DCA                 |
+| Mineral Rights | Ore detection in your claimed shafts      |
+| Shops          | Resources from biomes you haven't reached |
+| Land Claims    | _(Free — earned by building, not bought)_ |
 
 Land claims are the one thing that doesn't cost copper. Surface claims are earned through sweat. Everything underground is bought with capital.

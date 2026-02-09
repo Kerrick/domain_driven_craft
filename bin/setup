@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# SPDX-FileCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+set -euo pipefail
+
+# When invoked by npm (e.g. `prepare` lifecycle hook after `npm install`),
+# skip the steps that npm already handled to avoid recursion.
+if [ -z "${npm_lifecycle_event:-}" ]; then
+  echo "==> Installing tool versions (mise)…"
+  mise install
+
+  echo "==> Installing dependencies…"
+  npm install
+fi
+
+echo "==> Installing pre-commit hooks…"
+pre-commit install --config .config/pre-commit-config.yaml || true
+
+echo "==> Ready! Run 'npm run precommit' to verify."

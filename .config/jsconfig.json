@@ -10,11 +10,12 @@
     "skipLibCheck": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
+    "baseUrl": "..",
+    "types": [],
     "paths": {
       "@minecraft/server": ["node_modules/@minecraft/server"]
     }
   },
-  "include": ["lib/**/*.js", "lib/**/*.d.ts"],
-  "exclude": ["node_modules"]
+  "include": ["../lib/**/*.js", "../lib/**/*.d.ts"],
+  "exclude": ["../node_modules"]
 }

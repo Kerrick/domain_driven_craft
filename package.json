@@ -4,14 +4,37 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "typecheck": "tsc -p jsconfig.json --noEmit",
-    "lint": "eslint lib/",
-    "check": "npm run typecheck && npm run lint"
+    "fix:js": "eslint --fix lib/ scripts/",
+    "fix:prettier": "prettier --write .",
+    "fix": "npm run fix:js && npm run fix:prettier",
+    "lint:js": "eslint --max-warnings 0 lib/ lib/**/*.d.ts scripts/ scripts/**/*.d.ts && jscpd lib/ scripts/ --config .config/jscpd.json --exitCode 1",
+    "lint:forbid": "node scripts/forbid_eslint_bypass.js && node scripts/forbid_type_unsafety.js",
+    "lint:prettier": "prettier --check .",
+    "lint:reuse": "reuse lint",
+    "lint": "npm run lint:js && npm run lint:forbid && npm run lint:prettier && npm run lint:reuse",
+    "test": "vitest run --config .config/vitest.config.js",
+    "check:types": "tsc -p .config/jsconfig.json --noEmit && tsc -p .config/jsconfig.scripts.json --noEmit",
+    "check:sidecars": "node scripts/enforce_sidecars/index.js",
+    "check": "npm run check:types && npm run check:sidecars",
+    "prepare": "./bin/setup",
+    "precommit": "npm run fix && npm run check && npm run lint && npm run test"
   },
   "devDependencies": {
     "@minecraft/server": "2.5.0-beta.1.21.132-stable",
+    "@stylistic/eslint-plugin": "^5.7.1",
+    "@types/node": "^25.2.2",
     "eslint": "^9.39.2",
+    "eslint-plugin-es-x": "^9.4.0",
     "eslint-plugin-import": "^2.32.0",
-    "typescript": "^5.3.0"
+    "eslint-plugin-jsdoc": "^62.5.4",
+    "eslint-plugin-minecraft-linting": "^2.0.12",
+    "eslint-plugin-sonarjs": "^3.0.6",
+    "eslint-plugin-sort-class-members": "^1.21.0",
+    "jscpd": "^4.0.8",
+    "prettier": "^3.8.1",
+    "prettier-plugin-jsdoc": "^1.8.0",
+    "typescript": "^5.3.0",
+    "typescript-eslint": "^8.54.0",
+    "vitest": "^4.0.18"
   }
 }
