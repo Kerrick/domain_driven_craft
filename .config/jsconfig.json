@@ -16,6 +16,6 @@
       "@minecraft/server": ["node_modules/@minecraft/server"]
     }
   },
-  "include": ["../lib/**/*.js", "../lib/**/*.d.ts"],
+  "include": ["../lib/**/*.js", "../lib/**/*.d.ts", "../scripts/main.js"],
   "exclude": ["../node_modules"]
 }
