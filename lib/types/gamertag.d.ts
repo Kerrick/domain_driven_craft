@@ -15,7 +15,7 @@ export declare class Gamertag {
   /** Xbox User ID, if known from the allowlist. */
   readonly xuid: string | null
 
-  /** Identity equality — two gamertags match if their names match. */
+  /** Identity equality — two gamertags match if their names match (case-insensitive). */
   equals(other: Gamertag): boolean
   /** Serializes for persistence in dynamic properties. */
   toJSON(): { name: string; xuid?: string }
