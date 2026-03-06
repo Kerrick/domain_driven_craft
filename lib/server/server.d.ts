@@ -7,7 +7,7 @@ import type { Player } from '../player'
 /**
  * The server aggregate root tracks all connected players and coordinates
  * per-tick processing. It translates Minecraft player-join and player-leave
- * events into domain objects and manages the server-wide difficulty setting.
+ * events into domain objects.
  */
 export declare class Server {
   /** Singleton accessor. */
@@ -34,7 +34,4 @@ export declare class Server {
   playerJoined(mcPlayer: import('@minecraft/server').Player): void
   /** Removes the named player from tracking. */
   playerLeft(name: string): void
-
-  /** Recomputes difficulty based on current player preferences. */
-  recalculateDifficulty(): void
 }

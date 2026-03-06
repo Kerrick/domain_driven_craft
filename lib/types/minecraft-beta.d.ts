@@ -29,8 +29,27 @@ export interface ChatSendBeforeEventSignal {
 
 // Augment the world.beforeEvents type
 declare module '@minecraft/server' {
-  /** Adds the beta chatSend event to the world's beforeEvents. */
+  /** Adds beta events to the world's beforeEvents. */
   interface WorldBeforeEvents {
     readonly chatSend: ChatSendBeforeEventSignal
+    readonly entityHurt: EntityHurtBeforeEventSignal
+  }
+
+  /** An entity about to take damage, which can be cancelled. */
+  interface EntityHurtBeforeEvent {
+    /** The entity being hurt. */
+    readonly hurtEntity: Entity
+    /** Describes where the damage came from. */
+    readonly damageSource: EntityDamageSource
+    /** Set to true to cancel the damage. */
+    cancel: boolean
+  }
+
+  /** Event signal for subscribing to entity hurt events. */
+  interface EntityHurtBeforeEventSignal {
+    subscribe(
+      callback: (event: EntityHurtBeforeEvent) => void,
+    ): (event: EntityHurtBeforeEvent) => void
+    unsubscribe(callback: (event: EntityHurtBeforeEvent) => void): void
   }
 }

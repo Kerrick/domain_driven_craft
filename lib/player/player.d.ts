@@ -56,6 +56,10 @@ export declare class Player {
   died(): void
   /** Records that this player killed a mob. */
   killedMob(): void
+  /** Whether this player's damage shield should block the given source. */
+  shouldShieldFrom(
+    damageSource: import('../types/damage_source').DamageSource,
+  ): boolean
   /** Records a hotbar slot change (resets AFK timer). */
   changedHotbarSlot(): void
   /** Accumulates play time for this tick interval. */
