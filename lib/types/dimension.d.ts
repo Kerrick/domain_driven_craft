@@ -5,6 +5,8 @@
 /** Domain-friendly dimension name. */
 export type DimensionName = 'overworld' | 'nether' | 'end'
 
+/** The dimension players build, sleep, and see the sun in. */
+export declare const OVERWORLD: 'overworld'
 /** Maps Minecraft's internal dimension IDs to domain names. */
 export declare const DIMENSION_MAP: Record<string, DimensionName>
 /** All valid dimension names. */

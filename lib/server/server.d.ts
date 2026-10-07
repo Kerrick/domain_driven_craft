@@ -19,6 +19,8 @@ export declare class Server {
   readonly name: string
   /** Server-wide operator-configurable settings. */
   readonly settings: import('../settings/settings').Settings
+  /** How many players have to sleep before the night can pass. */
+  readonly sleepRule: import('./sleep_rule').SleepRule
 
   /** Advances all per-tick processing (settings, polls, presence). */
   tick(): void
@@ -29,6 +31,8 @@ export declare class Server {
   allPlayers(): Set<Player>
   /** Only players who are not AFK. */
   activePlayers(): Set<Player>
+  /** Only players standing in the dimension where beds work. */
+  overworldPlayers(): Set<Player>
 
   /** Wraps a Minecraft player in a domain {@link Player} and tracks it. */
   playerJoined(mcPlayer: import('@minecraft/server').Player): void

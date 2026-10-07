@@ -26,6 +26,8 @@ export declare class Player {
   readonly abstains: boolean
   /** Whether this player is away from keyboard. */
   readonly isAfk: boolean
+  /** Whether this player stands where a bed would work. */
+  readonly isInOverworld: boolean
   /** Current position in the world. */
   readonly location: Location
 

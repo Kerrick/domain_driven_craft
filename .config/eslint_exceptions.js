@@ -78,7 +78,7 @@ exceptions.allow('lib/stat/stat.js', {
 })
 
 exceptions.allow('lib/types/dimension.js', {
-  line: 13,
+  line: 15,
   reason: `
   TODO: Extract Dimension class (above) and add a fromMinecraft() factory method.
 `,

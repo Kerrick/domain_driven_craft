@@ -32,8 +32,8 @@ from within the game.
 Six subdomains organize the work:
 
 - **Gameplay.** Coordinates display, lifetime stats, milestones,
-  first-sighting announcements, personal preferences, and home
-  teleportation.
+  first-sighting announcements, personal preferences, home teleportation,
+  and letting the non-AFK players pass the night on their own.
 - **Governance.** Chat commands, timed polls with consensus rules,
   operator-only settings, and player timeouts.
 - **IAM.** Gamertag-based identity, invitations, and online presence.
