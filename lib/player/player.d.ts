@@ -4,6 +4,7 @@
 
 import type { PlayerStats } from './player_stats'
 import type { PreferenceList } from './preference_list'
+import type { Inventory } from './inventory'
 import type { Location } from '../types/location'
 import type { Block } from '../block/block'
 
@@ -20,6 +21,8 @@ export declare class Player {
   readonly preferences: PreferenceList
   /** Cumulative gameplay statistics. */
   readonly stats: PlayerStats
+  /** This player's inventory: item operations, and whether they caused them. */
+  readonly inventory: Inventory
   /** Whether this player has operator privileges. */
   readonly isOp: boolean
   /** Whether this player is excluded from poll quorum (e.g. AFK). */
